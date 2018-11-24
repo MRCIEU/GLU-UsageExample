@@ -32,14 +32,14 @@ sh mainConvertFileFormat.sh ${PROJECT_DATA}/original/cgm/ ${PROJECT_DATA}/derive
 
 ## Generating variables with GLU
 
-Generate variables using complete days approach -- run jobs in the `1-run-glu` directory.
+Generate variables using complete days approach - run jobs in the `1-run-glu` directory.
 
 ```bash
 qsub jobmain-preg.sh
 qsub jobmain-nopreg.sh
 ```
 
-Generate variables using approximally imputed approach -- run jobs in the `2-run-glu-impute` directory.
+Generate variables using approximally imputed approach - run jobs in the `2-run-glu-impute` directory.
 
 ```bash
 qsub jobimpute-preg.sh
