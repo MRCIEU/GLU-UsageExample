@@ -1,0 +1,20 @@
+
+##
+## formats output by jobs and stata
+
+*.log
+*.sh.e*
+out*.file
+
+##
+## old files
+
+*/off/*
+
+##
+## standard data formats
+
+*.csv
+*.dta
+*.tsv
+*.txt
