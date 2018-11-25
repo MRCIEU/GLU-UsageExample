@@ -95,7 +95,8 @@ summ
 
 *
 ** correlations for supplement
-pwcorr meannumpeaksperday meanaucperday meanmadperday meangvpperday meansgvpperday meanproportionlowperday meanproportionnormalperday meanproportionhighperday meanfastingproxyperday mean_meal_timetopeak mean_meal_pp1 mean_meal_pp2, sig
+pwcorr meanaucperday meanmadperday meansgvpperday meanproportionlowperday meanproportionnormalperday meanproportionhighperday meanfastingproxyperday mean_meal_timetopeak mean_meal_pp1 mean_meal_pp2, sig
+*pwcorr meannumpeaksperday meanaucperday meanmadperday meangvpperday meansgvpperday meanproportionlowperday meanproportionnormalperday meanproportionhighperday meanfastingproxyperday mean_meal_timetopeak mean_meal_pp1 mean_meal_pp2, sig
 
 
 * checking flipping of correlations for gvp vs sgvp

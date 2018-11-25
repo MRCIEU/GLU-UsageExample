@@ -45,13 +45,13 @@ We then run our analysis, generating the results of associations with BMI (for s
 This script also generates the correlations for supplementary table 4 (see log file).
 
 ```bash
-stata -b basicAnalysis.do
+stata -b basicAnalysisAll.do
 ```
 
 Then we plot the results (figure 2 in the main paper).
 
 ```bash
-matlab -m plotResults
+matlab -r plotResultsAll
 ```
 
 
