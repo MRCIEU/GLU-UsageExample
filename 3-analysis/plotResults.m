@@ -49,7 +49,7 @@ set(gca,'XTickLabel',fieldLabels);
 % finish figure
 set(h,'Units','Inches');
 pos = get(h,'Position');
-legend([p1 p2], 'Complete days', 'Approximally adjusted', 'location', 'best');
+legend([p1 p2], 'Complete days', 'Approximal imputed', 'location', 'best');
 set(h,'PaperPositionMode','Auto','PaperUnits','Inches','PaperSize',[pos(3), pos(4)]);
 saveas(h, strcat(resDir, '/res-all-outcomeunits',num2str(sensitivity),'.pdf'));
 
@@ -101,7 +101,7 @@ set(gca,'XTickLabel',fieldLabels);
 % finish figure
 set(h,'Units','Inches');
 pos = get(h,'Position');
-legend([p1 p2], 'Complete days', 'Approximally adjusted', 'location', 'best');
+legend([p1 p2], 'Complete days', 'Approximal imputed', 'location', 'best');
 set(h,'PaperPositionMode','Auto','PaperUnits','Inches','PaperSize',[pos(3), pos(4)]);
 saveas(h, strcat(resDir, '/res-all-percent',num2str(sensitivity),'.pdf'));
 
