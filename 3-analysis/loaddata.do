@@ -13,6 +13,10 @@ local dataDir = "`1'"
 insheet using "`dataDir'/derived/cgm/glu-derived-all.csv", clear
 rename userid visitid
 
+* one incorrect visitids (it's early not last pregnancy)
+merge m:1 visitid using "`dataDir'/original/visitid-corrections-in-cgm.dta"
+replace visitid = changeto if changeto!=""
+drop changeto _merge
 
 **
 ** get number of women with CGM data, for paper text

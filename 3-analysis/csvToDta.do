@@ -15,6 +15,11 @@ merge 1:1 visitid using "`dataDir'/original/visitid-corrections.dta"
 replace visitid = changeto if changeto!=""
 drop changeto _merge
 
+
+* one person had an incorrect timepoint (2 rather than 1)
+
+replace timepoint1 = 1 if gestation!=. & gestation<28 & timepoint1==2 & timepoint2==.
+
 save "`dataDir'/original/CGM_additional_variables_20180903.dta", replace
 
 

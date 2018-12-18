@@ -10,6 +10,15 @@ Combine the pregnancy / no pregnancy and 'complete days' / 'approximally imputed
 Rscript makeGLUDerivedDataset.r
 ```
 
+We convert our phenotype file (containing BMI and confounders) from a CSV to a Stata DTA file.
+
+```bash
+stata -b idListsToDta.do
+```
+
+```bash
+stata -b csvToDta.do
+```
 
 
 ## Time point summary (supplementary table 3)
@@ -20,6 +29,11 @@ Summarise the number of participants with each combination of time points.
 stata -b timepointSummaryAll.do
 ```
 
+Summarise the time (gestation or postnatally) for each time point.
+
+```bash
+stata -b timeAtTimepointSummary.do
+```
 
 
 ## Variable summaries (supplementary table 5)
@@ -33,12 +47,6 @@ stata -b variableSummariesAll.do
 
 
 ## Example analysis
-
-We first convert our phenotype file (containing BMI and confounders) from a CSV to a Stata DTA file.
-
-```bash
-stata -b csvToDta.do
-```
 
 We then run our analysis, generating the results of associations with BMI (for supplementary table 6).
 

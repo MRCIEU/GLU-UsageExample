@@ -9,6 +9,8 @@ local dataDir : env PROJECT_DATA
 insheet using "`dataDir'/original/visitid-corrections.txt", comma names
 save "`dataDir'/original/visitid-corrections.dta", replace
 
+insheet using "`dataDir'/original/visitid-corrections-in-cgm.txt", clear comma names
+save "`dataDir'/original/visitid-corrections-in-cgm.dta", replace
 
 * one participant with has a second pregnancy, we remove this one in loaddata.do
 
