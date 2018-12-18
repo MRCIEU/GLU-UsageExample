@@ -87,14 +87,19 @@ list
 
 count if timepoint11 == 1 & timepoint12 == 2
 post `memhold' ("timepoints 1 and 2 only") (`r(N)')
+
 count if timepoint11 == 1 & timepoint12 == 3
 post `memhold' ("timepoints 1 and 3 only") (`r(N)')
+
 count if timepoint11 == 1 & timepoint12 == 4
 post `memhold' ("timepoints 1 and 4 only") (`r(N)')
+
 count if timepoint11 == 2 & timepoint12 == 3
 post `memhold' ("timepoints 2 and 3 only") (`r(N)')
+
 count if timepoint11 == 2 & timepoint12 == 4
 post `memhold' ("timepoints 2 and 4 only") (`r(N)')
+
 count if timepoint11 == 3 & timepoint12 == 4
 post `memhold' ("timepoints 3 and 4 only") (`r(N)')
 
