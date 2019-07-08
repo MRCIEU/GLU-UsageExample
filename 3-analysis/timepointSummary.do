@@ -94,6 +94,8 @@ post `memhold' ("timepoints 1 and 3 only") (`r(N)')
 count if timepoint11 == 1 & timepoint12 == 4
 post `memhold' ("timepoints 1 and 4 only") (`r(N)')
 
+list personID if timepoint11 == 1 & timepoint12 == 4
+
 count if timepoint11 == 2 & timepoint12 == 3
 post `memhold' ("timepoints 2 and 3 only") (`r(N)')
 

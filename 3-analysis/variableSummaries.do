@@ -121,7 +121,7 @@ use "`resDir'/variable-summary-`testx'.dta", replace
 
 
 * format numbers nicely and change to string
-format median iqrL iqrU %5.2f
+format median iqrL iqrU %5.3f
 tostring median iqrL iqrU, replace usedisplayformat force
 
 * format the estimate and ci into single string variable

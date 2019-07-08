@@ -4,10 +4,15 @@ resDir=getenv('RES_DIR');
 x = dataset('file', strcat(resDir,'/res-MAIN-PREG-',num2str(sensitivity),'.csv'), 'delimiter', '\t');
 keepidxX = cellfun('isempty',strfind(x.test1, '-adj'));
 x = x(~keepidxX,:);
-ximp = dataset('file', strcat(resDir,'/res-IMPUTED-PREG-',num2str(sensitivity),'.csv'), 'delimiter', '\t');
+ximp = dataset('file', strcat(resDir,'/res-IMPUTED-APPROX-PREG-',num2str(sensitivity),'.csv'), 'delimiter', '\t');
 keepidxXimp = cellfun('isempty',strfind(ximp.test1, '-adj'));
 ximp = ximp(~keepidxXimp,:);
 x = [x;ximp];
+
+ximpo = dataset('file', strcat(resDir,'/res-IMPUTED-OTHER-PREG-',num2str(sensitivity),'.csv'), 'delimiter', '\t');
+keepidxXimpo = cellfun('isempty',strfind(ximpo.test1, '-adj'));
+ximpo = ximpo(~keepidxXimp,:);
+x = [x;ximpo];
 
 x
 
@@ -20,7 +25,7 @@ fontsizex = 9;
 
 
 h=figure();
-set(gcf,'position',[100,100,250,500])
+set(gcf,'position',[100,100,500,500])
 plot([0 22], [0 0], '--', 'color', 'black');
 xlim([0 10]);
 ylim([-0.02 0.1])
@@ -32,7 +37,7 @@ ylabel('Mean difference in summary variable per 1kg/m\^2 higher BMI');
 
 % add results
 
-[p1, p2] = myplot(x, 'meanaucperday', 1);
+[p1, p2, p3] = myplot(x, 'meanaucperday', 1);
 myplot(x, 'meanaucperday_dt', 2);
 myplot(x, 'meanaucperday_nt', 3);
 myplot(x, 'meanfastingproxy', 5);
@@ -49,7 +54,7 @@ set(gca,'XTickLabel',fieldLabels);
 % finish figure
 set(h,'Units','Inches');
 pos = get(h,'Position');
-legend([p1 p2], 'Complete days', 'Approximal imputed', 'location', 'best');
+legend([p1 p2 p3], 'Complete days', 'Approximal imputed', 'Other day imputed', 'location', 'best');
 set(h,'PaperPositionMode','Auto','PaperUnits','Inches','PaperSize',[pos(3), pos(4)]);
 saveas(h, strcat(resDir, '/res-all-outcomeunits',num2str(sensitivity),'.pdf'));
 
@@ -62,9 +67,10 @@ saveas(h, strcat(resDir, '/res-all-outcomeunits',num2str(sensitivity),'.pdf'));
 
 
 h=figure();
-set(gcf,'position',[100,100,400,500])
+set(gcf,'position',[100,100,1000,500])
 plot([0 22], [0 0], '--', 'color', 'black');
 xlim([0 22]);
+ylim([-20 70]);
 set(gca,'fontsize',fontsizex);
 rotateXLabels(gca, 65);
 xlabel('Summary variable');
@@ -73,7 +79,7 @@ ylabel('% difference in summary variable per 1kg/m\^2 higher BMI');
 
 % add results
 
-[p1, p2] = myplot(x, 'meanmadperdayLogLOG', 1);
+[p1, p2, p3] = myplot(x, 'meanmadperdayLogLOG', 1);
 myplot(x, 'meanmadperday_dtLogLOG', 2);
 myplot(x, 'meanmadperday_ntLogLOG', 3);
 myplot(x, 'meansgvpperdayLogLOG', 5);
@@ -101,7 +107,7 @@ set(gca,'XTickLabel',fieldLabels);
 % finish figure
 set(h,'Units','Inches');
 pos = get(h,'Position');
-legend([p1 p2], 'Complete days', 'Approximal imputed', 'location', 'best');
+legend([p1 p2 p3], 'Complete days', 'Approximal imputed', 'Other day imputed', 'location', 'best');
 set(h,'PaperPositionMode','Auto','PaperUnits','Inches','PaperSize',[pos(3), pos(4)]);
 saveas(h, strcat(resDir, '/res-all-percent',num2str(sensitivity),'.pdf'));
 

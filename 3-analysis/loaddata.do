@@ -11,7 +11,7 @@ local dataDir = "`1'"
 * IMPUTED-NOPREG: approximal imputation approach + no pregnancy arg    
 
 insheet using "`dataDir'/derived/cgm/glu-derived-all.csv", clear
-rename userid visitid
+rename id visitid
 
 * one incorrect visitids (it's early not last pregnancy)
 merge m:1 visitid using "`dataDir'/original/visitid-corrections-in-cgm.dta"

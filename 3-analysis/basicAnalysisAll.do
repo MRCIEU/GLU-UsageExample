@@ -10,10 +10,16 @@ do basicAnalysis.do "MAIN-PREG" 0
 do basicAnalysis.do "MAIN-PREG" 1
 
 **
-** imputed analysis
+** impute approximal analysis
 
-do basicAnalysis.do "IMPUTED-PREG" 0
-do basicAnalysis.do "IMPUTED-PREG" 1
+do basicAnalysis.do "IMPUTED-APPROX-PREG" 0
+do basicAnalysis.do "IMPUTED-APPROX-PREG" 1
+
+**
+** impute other day analysis
+
+do basicAnalysis.do "IMPUTED-OTHER-PREG" 0
+do basicAnalysis.do "IMPUTED-OTHER-PREG" 1
 
 
 

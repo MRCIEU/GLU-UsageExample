@@ -5,14 +5,13 @@
 
 date
 
-module add languages/R-3.3.3-ATLAS
+module add languages/R-3.4.1-ATLAS
 
-export GLU="${HOME}/2016-alspac-new-measures/code/GLU/R"
+cd $PBS_O_WORKDIR
+
 export PROJECT_DATA="${HOME}/2016-alspac-new-measures/data"
 
-cd $GLU
-
-Rscript runGLU.R --indir=$PROJECT_DATA/derived/cgm/sequences/ --pregnancy --outdir=$PROJECT_DATA/derived/cgm/main-preg/ --save
+Rscript run-generic.R main preg
 
 date
 
