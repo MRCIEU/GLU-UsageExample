@@ -9,7 +9,9 @@ cgmderivedir=paste(dataDir, '/derived/cgm/', sep='')
 ##
 ## files containing each version of GLU derived data we generate
 
+mainPregFile=paste(cgmderivedir, 'main-preg/cgmSummaryVerbose.csv', sep='')
 mainNoPregFile=paste(cgmderivedir, 'main-nopreg/cgmSummaryVerbose.csv', sep='')
+
 imputedPregFile=paste(cgmderivedir, 'imputed-preg/cgmSummaryVerbose-impute-approximal.csv', sep='')
 imputedNoPregFile=paste(cgmderivedir, 'imputed-nopreg/cgmSummaryVerbose-impute-approximal.csv', sep='')
 
