@@ -8,7 +8,7 @@ Millard, LAC, et al. GLU: A tool for analysing continuously measured glucose in 
 
 ## Environment details
 
-I use Stata v14 and R version 3.3.1-ATLAS.
+I use Stata v15 and R version 3.3.1-ATLAS.
 
 The code uses some environment variables that need to be set in your linux environment.
 
