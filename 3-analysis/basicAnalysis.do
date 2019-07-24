@@ -17,7 +17,7 @@ local sensitivity="`2'"
 global resDir : env RES_DIR
 local dataDir : env PROJECT_DATA
 
-log using "$resDir/log-`analysis'.txt", text replace
+log using "$resDir/log-`analysis'-`sensitivity'.txt", text replace
 
 *
 ** import data
@@ -72,7 +72,6 @@ keep if mytimepoint == 1 | mytimepoint == 2
 
 summ
 
-
 **
 ** keep first timepoint of each participant if they have both pregnancy timepoints
 
@@ -81,7 +80,7 @@ quietly by personID:  gen dup = cond(_N==1,0,_n)
 
 tab dup
 
-* main analysis keep early timepoint, sensitivity keep later timepoint
+* main analysis keep later timepoint, sensitivity keep earlier timepoint
 if "`sensitivity'"=="0" {
 	drop if dup==1
 } 
@@ -92,12 +91,10 @@ else {
 
 summ
 
-
 *
 ** correlations for supplement
 pwcorr meanaucperday meanmadperday meansgvpperday meanproportionlowperday meanproportionnormalperday meanproportionhighperday meanfastingproxyperday mean_meal_timetopeak mean_meal_pp1 mean_meal_pp2, sig
-*pwcorr meannumpeaksperday meanaucperday meanmadperday meangvpperday meansgvpperday meanproportionlowperday meanproportionnormalperday meanproportionhighperday meanfastingproxyperday mean_meal_timetopeak mean_meal_pp1 mean_meal_pp2, sig
-
+* pwcorr meannumpeaksperday meanaucperday meanmadperday meangvpperday meansgvpperday meanproportionlowperday meanproportionnormalperday meanproportionhighperday meanfastingproxyperday mean_meal_timetopeak mean_meal_pp1 mean_meal_pp2, sig
 
 * checking flipping of correlations for gvp vs sgvp
 *regress meanfastingproxyperday meangvpperday
