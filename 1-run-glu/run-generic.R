@@ -21,6 +21,7 @@ library('GLU')
 # run GLU
 indirx=paste0(datadir, '/original/cgm/')
 
+set.seed(1234)
 
 if (args[1] == 'main') {
 	if (args[2] == 'preg') {
